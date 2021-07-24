@@ -1,16 +1,16 @@
 # rehype-shiki
 
-[**rehype**][rehype] plugin to apply syntax highlighting on code blocks with [**shiki**][shiki].
+[**rehype**][rehype] plugin to apply syntax highlighting on code blocks with [**shiki**][shiki]. This plugin was based upon [**rehype-highlight**][rehype-highlight].
 
-This plugin was based upon [**rehype-highlight**][rehype-highlight].
+## Install
 
-## Installation
+With [npm](https://npmjs.org) do:
 
-[npm][]:
-
-```bash
-npm install rehype-shiki
 ```
+npm install vweevers/rehype-shiki
+```
+
+_This is a temporary fork of [`rsclarke/rehype-shiki`](https://github.com/rsclarke/rehype-shiki) with updated dependencies._
 
 ## Usage
 
@@ -25,17 +25,16 @@ console.warn("Hello, " + name + "!")</code></pre>
 
 ...and `example.js` like this:
 
-```javascript
-var vfile = require('to-vfile')
-var report = require('vfile-reporter')
-var rehype = require('rehype')
-var shiki = require('rehype-shiki')
+```js
+import { toVFile } from 'to-vfile'
+import rehype from 'rehype'
+import shiki from 'rehype-shiki'
 
 rehype()
-  .data('settings', {fragment: true})
+  .data('settings', { fragment: true })
   .use(shiki)
-  .process(vfile.readSync('example.html'), function(err, file) {
-    console.error(report(err || file))
+  .process(toVFile.readSync('example.html'), function (err, file) {
+    if (err) throw err
     console.log(String(file))
   })
 ```
@@ -87,7 +86,6 @@ This is in respect to the [mdast-util-to-hast code handler](https://github.com/s
 [rehype]: https://github.com/rehypejs/rehype
 [shiki]: https://github.com/octref/shiki
 [rehype-highlight]: https://github.com/rehypejs/rehype-highlight
-[npm]: https://docs.npmjs.com/cli/install
 [hast]: https://github.com/syntax-tree/hast
 [license]: LICENSE
 [rsclarke]: https://rsclarke.dev

@@ -2,18 +2,30 @@
   "name": "rehype-shiki",
   "version": "0.0.9",
   "description": "rehype plugin to highlight code blocks with shiki",
-  "main": "index.js",
+  "author": "Richard Clarke <rsclrk@pm.me> (https://rsclarke.dev)",
+  "license": "MIT",
+  "main": "index.mjs",
+  "type": "module",
   "files": [
     "index.js"
   ],
   "scripts": {
-    "format": "prettier --write '**/*.js' && xo --fix",
-    "test": "xo"
+    "test": "standard"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rsclarke/rehype-shiki.git"
+  "dependencies": {
+    "hast-util-to-string": "^1.0.4",
+    "shiki": "^0.9.5",
+    "unist-builder": "^3.0.0",
+    "unist-util-visit": "^3.1.0"
   },
+  "devDependencies": {
+    "standard": "^16.0.3"
+  },
+  "repository": "vweevers/rehype-shiki",
+  "bugs": {
+    "url": "https://github.com/vweevers/rehype-shiki/issues"
+  },
+  "homepage": "https://github.com/vweevers/rehype-shiki#readme",
   "keywords": [
     "rehype",
     "shiki",
@@ -22,33 +34,7 @@
     "highlight",
     "highlighting"
   ],
-  "author": "Richard Clarke <rsclrk@pm.me> (https://rsclarke.dev)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rsclarke/rehype-shiki/issues"
-  },
-  "homepage": "https://github.com/rsclarke/rehype-shiki#readme",
-  "dependencies": {
-    "hast-util-to-string": "^1.0.4",
-    "shiki": "^0.1.7",
-    "shiki-languages": "^0.1.6",
-    "unist-builder": "^2.0.3",
-    "unist-util-visit": "^2.0.3"
-  },
-  "devDependencies": {
-    "prettier": "2.0.5",
-    "xo": "^0.32.1"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "useTabs": false,
-    "singleQuote": true,
-    "bracketSpacing": false,
-    "semi": false,
-    "trailingComma": "none"
-  },
-  "xo": {
-    "prettier": true,
-    "esnext": false
+  "engines": {
+    "node": ">=12"
   }
 }
